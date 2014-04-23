@@ -5,6 +5,8 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  embeds_many :jogs
+
   ## User Name
   field :first_name, type: String
   field :last_name,  type: String
@@ -38,6 +40,11 @@ class User
   field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   field :locked_at,       type: Time
 
+
+  index({last_name: 1, first_name: 1}, {unique: false})
+  index({email: 1,}, {unique: true})
+
   ## Validations
   validates_presence_of :first_name, :last_name, :email
+  validates_uniqueness_of :email
 end
