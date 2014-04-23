@@ -4,14 +4,13 @@ gem 'rails', '4.1.0'
 
 gem "mongoid", git: 'https://github.com/mongoid/mongoid.git'
 
+# Front-end
 gem 'sass-rails', '~> 4.0.2'
 gem 'haml-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.1'
-
+gem 'angularjs-rails'
 gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'foundation-rails'
 
@@ -42,12 +41,7 @@ group :development do
   gem 'capistrano-rails'
 end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
 # In General
-gem 'angularjs-rails'
-
 group :development do
   gem 'puma'
   gem 'spring'
