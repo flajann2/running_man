@@ -47,5 +47,8 @@ end
 
 # In General
 gem 'angularjs-rails'
-gem 'puma', group: :development
-gem 'spring', group: :development
+
+group :development do
+  gem 'puma'
+  gem 'spring'
+end
