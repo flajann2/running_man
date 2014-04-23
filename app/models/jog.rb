@@ -8,8 +8,6 @@ class Jog
   field :jog_distance_ran, type: Float    # in Meters
   field :entry_active,     type: Boolean, default: true
 
-  index({ jog_started_at: 1 }, { unique: false, name: "date_index" })
-
   validates_presence_of :jog_started_at
   validates_presence_of :user
 end

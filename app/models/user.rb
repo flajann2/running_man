@@ -40,9 +40,10 @@ class User
   field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   field :locked_at,       type: Time
 
-
+  ## Indicies
   index({last_name: 1, first_name: 1}, {unique: false})
   index({email: 1,}, {unique: true})
+  index({ 'jog.jog_started_at' => 1 }, { unique: false, name: "jog_date_index" })
 
   ## Validations
   validates_presence_of :first_name, :last_name, :email
